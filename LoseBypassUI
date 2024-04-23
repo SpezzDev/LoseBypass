@@ -8,8 +8,8 @@ repeat
 until game:IsLoaded()
 
 -- Menu/UI Creation
-if not isfile("losebypass.wtf") then
-   makefolder("losebypass.wtf")
+if not isfile("endium.wtf") then
+   makefolder("endium.wtf")
 end
 
 local menu = game:GetObjects("rbxassetid://17171194056")[1] 
@@ -290,14 +290,14 @@ local function createWatermark()
         local ping = string.format('%.0f', game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
         local uid = "1"
         local fpsValue = string.split(game.Stats.Workspace.Heartbeat:GetValueString(), ".")[1]
-        WaterMarkLabel.Text = 'losebypass.<font color="rgb(115, 100, 215)">wtf</font> - uid: <font color="rgb(115, 100, 215)">' .. uid .. '</font> / fps: <font color="rgb(115, 100, 215)">' .. fpsValue .. '</font> / ping: <font color="rgb(115, 100, 215)">' .. ping .. '</font> / time: <font color="rgb(115, 100, 215)">' .. time .. '</font>'
+        WaterMarkLabel.Text = 'endium.<font color="rgb(115, 100, 215)">wtf</font> - uid: <font color="rgb(115, 100, 215)">' .. uid .. '</font> / fps: <font color="rgb(115, 100, 215)">' .. fpsValue .. '</font> / ping: <font color="rgb(115, 100, 215)">' .. ping .. '</font> / time: <font color="rgb(115, 100, 215)">' .. time .. '</font>'
       end
    end)
    return Watermark
 end
 
 local library = {
-   Title = 'losebypass.<font color="rgb(115, 100, 215)">wtf</font> || universal',
+   Title = 'endium.<font color="rgb(115, 100, 215)">wtf</font> || universal',
    keybind = Enum.KeyCode.RightBracket,
    Watermark = createWatermark(),
       Colors = {
@@ -2347,7 +2347,7 @@ local library = {
                            if v == x then return true end
                            end return false end
                            function library:createConfig()
-                               makefolder("losebypass.wtf")
+                               makefolder("endium.wtf")
                                local name = library.flags["config_name"]
                                if contains(library.options["config_box"].values, name) then return library:Notify(name..".cfg already exists!", 5) end
                                if name == "" then return library:Notify("You need to put a name in!", 5) end
@@ -2359,14 +2359,14 @@ local library = {
                                else jig[i] = v
                                end
                            end
-                           writefile("losebypass.wtf/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
+                           writefile("endium.wtf/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
                            library:Notify("Succesfully created config "..name..".cfg!", 5)
                            library:refreshConfigs()
                        end
 
                        function library:saveConfig()
                            pcall(function()
-                               makefolder("losebypass.wtf")
+                               makefolder("endium.wtf")
                                local name = library.flags["config_box"]
                                if not name then
                                    return
@@ -2430,7 +2430,7 @@ local library = {
 
                function library:refreshConfigs()
                    local tbl = {}
-                   for i,v in next, listfiles("losebypass.wtf") do table.insert(tbl,v) end
+                   for i,v in next, listfiles("endium.wtf") do table.insert(tbl,v) end
                    library.options["config_box"].refresh(tbl)
                end      
            end)()                         
